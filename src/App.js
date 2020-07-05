@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      Tova e app js i ima promqna adsdasdads
+      Tova e app js i ima promqna
     </div>
   );
 }
