@@ -10,7 +10,7 @@ class BlogContainer extends React.Component {
     render() {
         return (
             <div>
-
+                sdfsdf
             </div>
         );
     }
