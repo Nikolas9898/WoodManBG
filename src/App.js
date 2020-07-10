@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Routes from "./client/dekstop/routes";
 
 function App() {
   return (
-    <div className="App">
-      Tova e app
-    </div>
+    <React.Fragment>
+     <Routes/>
+    </React.Fragment>
   );
 }
 
