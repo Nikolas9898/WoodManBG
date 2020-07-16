@@ -1,0 +1,9 @@
+.logoHolder {
+  max-width: 100px;
+  margin-right: 10px;
+  color: whitesmoke;
+}
+a.logoHolder {
+  text-decoration: none;
+  color: whitesmoke;
+}
