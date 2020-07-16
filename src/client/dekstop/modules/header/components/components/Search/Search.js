@@ -1,13 +1,13 @@
 import React from "react";
-import HeaderStyle from "../../Header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchStyle from './Search.module.css'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Search = (props) => {
   return (
-    <div className={HeaderStyle.searchHolder}>
-      <FontAwesomeIcon className={HeaderStyle.iconHolder} icon={faSearch} />
-      <input className={HeaderStyle.inputHolder} />
+    <div className={SearchStyle.searchHolder}>
+      <FontAwesomeIcon className={SearchStyle.iconHolder} icon={faSearch} />
+      <input className={SearchStyle.inputHolder} />
     </div>
   );
 };

@@ -1,9 +1,6 @@
 import React from "react";
-import HeaderStyle from "./Header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import Logo from "./components/Logo/Logo";
+import HeaderStyle from "./Header.module.css";
 import Search from "./components/Search/Search";
 import HeaderLink from "./components/HeaderLink/HeaderLink";
 
