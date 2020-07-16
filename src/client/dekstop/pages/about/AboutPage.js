@@ -1,13 +1,13 @@
 import React from "react";
 import HeaderContainer from "../../modules/header/HeaderContainer";
 
-const HomePage = (props) => {
+const AboutPage = (props) => {
   return (
     <div>
       <HeaderContainer />
-      Tova e home page-a
+      Tova e about page-a
     </div>
   );
 };
 
-export default HomePage;
+export default AboutPage;
