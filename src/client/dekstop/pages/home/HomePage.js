@@ -1,6 +1,4 @@
 import React from "react";
-import HeaderContainer from "../../layout/header/HeaderContainer";
-import SideBarContainer from "../../layout/sidebar/SideBarContainer";
 import Layout from "../../layout/layout";
 
 const HomePage = (props) => {
