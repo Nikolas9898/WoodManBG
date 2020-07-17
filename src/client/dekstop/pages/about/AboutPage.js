@@ -1,11 +1,13 @@
 import React from "react";
-import HeaderContainer from "../../modules/header/HeaderContainer";
+import HeaderContainer from "../../layout/header/HeaderContainer";
+import Layout from "../../layout/layout";
 
 const AboutPage = (props) => {
   return (
     <div>
-      <HeaderContainer />
-      Tova e about page-a
+      <Layout>
+        <div style={{ marginLeft: "120px" }}>asddas</div>
+      </Layout>
     </div>
   );
 };
