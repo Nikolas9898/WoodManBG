@@ -11,14 +11,25 @@ router.route("/").get(adminAuth, (req, res) => {
 router.route("/register").post((req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  const isAdmin = req.body.isAdmin;
+  let isAdmin = false;
+
+  if (req.body.isAdmin) {
+    isAdmin = true;
+  }
+  let error = { msg: "", status: "" };
 
   const newUser = new User({ username, password, isAdmin });
   newUser
     .save()
     .then(() => res.json(newUser))
     .catch((err) => {
-      res.status(400).json("Error: " + err);
+      if (err.code === 11000) {
+        error.msg = "User already exists";
+        error.status = "400";
+        res.status(400).json(error);
+      } else {
+        res.status(400).json("Error: ", err);
+      }
     });
 });
 
