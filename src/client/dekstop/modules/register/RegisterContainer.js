@@ -1,73 +1,71 @@
 import React, { useState } from "react";
-import styles from "../register/RegisterContainer.module.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import styles from "./RegisterContainer.module.css";
 import UserProfile from "../../layout/header/components/components/UserProfile/UserProfile";
 
 const RegisterContainer = (props) => {
-  const [userName, setUserName] = useState("");
-  const [userPassWord, setUserPassWord] = useState("");
+  const [username, setUsername] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const body = { username: userName, password: userPassWord, isAdmin: false };
+    const body = { username: username, password: userPassword, isAdmin: false };
     axios.post("http://localhost:5000/user/register", body);
   };
 
   return (
-    <div>
-      <form>
-        <div className={styles}>
+    <div className={styles.background}>
+      <form className={styles.form}>
+        <div>
           <h1>Register</h1>
-          <p>Please fill in this form to create an account.</p>
-          <label>
-            <b>email</b>
-          </label>
-          <input
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            type="text"
-            placeholder="enter thy email"
-            name="email"
-            id="email"
-            required
-          />
 
-          <label>
-            <b>password</b>
-          </label>
-          <input
-            value={userPassWord}
-            onChange={(e) => setUserPassWord(e.target.value)}
-            type="text"
-            placeholder="enter thy password"
-            name="password"
-            id="password"
-            required
-          />
-
-          <label>
-            <b>re-password</b>
-          </label>
-          <input
-            type="text"
-            placeholder="enter thy password again"
-            name="rePassword"
-            id="rePassword"
-            required
-          />
-
-          <p>
-            Thou Actions Imply Thou Aceeptance Of Ourth Terms And Services{" "}
+          <div className={styles.inputHolder}>
+            <label>Username</label>
+            <input
+              className={styles.input}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              placeholder="enter thy username"
+              name="username"
+              required
+            />
+          </div>
+          <div className={styles.inputHolder}>
+            <label>Password</label>
+            <input
+              className={styles.input}
+              value={userPassword}
+              onChange={(e) => setUserPassword(e.target.value)}
+              type="text"
+              placeholder="enter thy password"
+              name="password"
+              required
+            />
+          </div>
+          <div className={styles.inputHolder}>
+            <label>Repeat Password</label>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="enter thy password again"
+              name="rePassword"
+              required
+            />
+          </div>
+          {/* <p>
+            Thou Actions Imply Thou Acceptance Of Ourth Terms And Services{" "}
             <a href="#">Terms & Privacy</a>.
-          </p>
-          <button onClick={handleSubmit} class="registerbtn">
+          </p> */}
+          <button onClick={handleSubmit} className={styles.button}>
             Register
           </button>
-        </div>
-        <div class="container signin">
-          <p>
-            Already have an account? <a href="#">Sign in</a>.
-          </p>
+          <div className="container-signin">
+            <p>
+              Already have an account? <Link to={"/login"}>signin</Link>.
+            </p>
+          </div>
         </div>
       </form>
     </div>
