@@ -21,35 +21,36 @@ const LoginContainer = (props) => {
   };
 
   return (
-    <div>
-      <form>
+    <div className={styles.background}>
+      <form className={styles.form}>
         <div></div>
         <h1>Login</h1>
         <p>Please fill in this form to sing in to your account.</p>
-        <div class="container">
-          <label for="uname">
-            <b>Username</b>
-          </label>
-          <input
-            onChange={(e) => setUsername(e.target.value)}
-            type="text"
-            placeholder="Enter Username"
-            name="uname"
-            required
-          />
+        <div className="container">
+          <div className={styles.inputHolder}>
+            <label>Username</label>
+            <input
+              className={styles.input}
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              required
+            />
+          </div>
+          <div className={styles.inputHolder}>
+            <label>Password</label>
+            <input
+              className={styles.input}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+          </div>
 
-          <label for="psw">
-            <b>Password</b>
-          </label>
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Enter Password"
-            name="psw"
-            required
-          />
-
-          <button type="submit" onClick={handleLogin}>
+          <button className={styles.button} type="submit" onClick={handleLogin}>
             Login
           </button>
           {/* <label>
@@ -59,9 +60,6 @@ const LoginContainer = (props) => {
         </div>
 
         <div className="container">
-          <button type="button" class="cancelbtn">
-            Cancel
-          </button>
           <span className="psw">
             Forgot <a href="#">password?</a>
           </span>
@@ -72,7 +70,6 @@ const LoginContainer = (props) => {
           </p>
         </div>
       </form>
-      spoko 6te se opravq posle css-a
     </div>
   );
 };

@@ -15,53 +15,50 @@ const RegisterContainer = (props) => {
   };
 
   return (
-    <div>
-      <form className={styles}>
+    <div className={styles.background}>
+      <form className={styles.form}>
         <div>
           <h1>Register</h1>
-          <p>Please fill in this form to create an account.</p>
-          <label>
-            <b>Username</b>
-          </label>
-          <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            type="text"
-            placeholder="enter thy username"
-            name="username"
-            id="username"
-            required
-          />
 
-          <label>
-            <b>password</b>
-          </label>
-          <input
-            value={userPassword}
-            onChange={(e) => setUserPassword(e.target.value)}
-            type="text"
-            placeholder="enter thy password"
-            name="password"
-            id="password"
-            required
-          />
-
-          <label>
-            <b>re-password</b>
-          </label>
-          <input
-            type="text"
-            placeholder="enter thy password again"
-            name="rePassword"
-            id="rePassword"
-            required
-          />
-
-          <p>
+          <div className={styles.inputHolder}>
+            <label>Username</label>
+            <input
+              className={styles.input}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              placeholder="enter thy username"
+              name="username"
+              required
+            />
+          </div>
+          <div className={styles.inputHolder}>
+            <label>Password</label>
+            <input
+              className={styles.input}
+              value={userPassword}
+              onChange={(e) => setUserPassword(e.target.value)}
+              type="text"
+              placeholder="enter thy password"
+              name="password"
+              required
+            />
+          </div>
+          <div className={styles.inputHolder}>
+            <label>Repeat Password</label>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="enter thy password again"
+              name="rePassword"
+              required
+            />
+          </div>
+          {/* <p>
             Thou Actions Imply Thou Acceptance Of Ourth Terms And Services{" "}
             <a href="#">Terms & Privacy</a>.
-          </p>
-          <button onClick={handleSubmit} class="registerbtn">
+          </p> */}
+          <button onClick={handleSubmit} className={styles.button}>
             Register
           </button>
           <div className="container-signin">
@@ -71,7 +68,6 @@ const RegisterContainer = (props) => {
           </div>
         </div>
       </form>
-      spoko 6te se opravq posle css-a
     </div>
   );
 };
