@@ -21,6 +21,12 @@ router.route("/register").post((req, res) => {
   }
   let error = { msg: "", status: "" };
 
+  if (email === undefined) {
+    error.msg = "No email provided";
+    error.status = "400";
+    res.status(400).json(error);
+  }
+
   if (emailRegexp.test(email) === false) {
     error.msg = "Inavalid email";
     error.status = "400";
@@ -42,7 +48,6 @@ router.route("/register").post((req, res) => {
     .save()
     .then(() => res.json(newUser))
     .catch((err) => {
-      console.log(err);
       if (err.code === 11000) {
         error.msg = "User already exists";
         error.status = "400";
