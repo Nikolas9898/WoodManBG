@@ -1,6 +1,7 @@
 const router = require("express").Router();
 let User = require("../models/user/user.model");
 let adminAuth = require("../middlewates/adminAuthentication");
+const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 router.route("/").get(adminAuth, (req, res) => {
   User.find()
@@ -9,8 +10,10 @@ router.route("/").get(adminAuth, (req, res) => {
 });
 
 router.route("/register").post((req, res) => {
+  const email = req.body.email;
   const username = req.body.username;
   const password = req.body.password;
+
   let isAdmin = false;
 
   if (req.body.isAdmin) {
@@ -18,11 +21,28 @@ router.route("/register").post((req, res) => {
   }
   let error = { msg: "", status: "" };
 
-  const newUser = new User({ username, password, isAdmin });
+  if (emailRegexp.test(email) === false) {
+    error.msg = "Inavalid email";
+    error.status = "400";
+    res.status(400).json(error);
+  }
+  User.find().then((users) => {
+    users.map((user) => {
+      if (user.email === email) {
+        error.msg = "Email already exists";
+        error.status = "400";
+        res.status(400).json(error);
+      }
+    });
+  });
+
+  const newUser = new User({ email, username, password, isAdmin });
+
   newUser
     .save()
     .then(() => res.json(newUser))
     .catch((err) => {
+      console.log(err);
       if (err.code === 11000) {
         error.msg = "User already exists";
         error.status = "400";
