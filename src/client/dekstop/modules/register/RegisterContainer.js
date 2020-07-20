@@ -1,34 +1,35 @@
 import React, { useState } from "react";
-import styles from "../register/RegisterContainer.module.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import styles from "./RegisterContainer.module.css";
 import UserProfile from "../../layout/header/components/components/UserProfile/UserProfile";
 
 const RegisterContainer = (props) => {
-  const [userName, setUserName] = useState("");
-  const [userPassWord, setUserPassWord] = useState("");
+  const [username, setUsername] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const body = { username: userName, password: userPassWord, isAdmin: false };
+    const body = { username: username, password: userPassword, isAdmin: false };
     axios.post("http://localhost:5000/user/register", body);
   };
 
   return (
     <div>
-      <form>
-        <div className={styles}>
+      <form className={styles}>
+        <div>
           <h1>Register</h1>
           <p>Please fill in this form to create an account.</p>
           <label>
-            <b>email</b>
+            <b>Username</b>
           </label>
           <input
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             type="text"
-            placeholder="enter thy email"
-            name="email"
-            id="email"
+            placeholder="enter thy username"
+            name="username"
+            id="username"
             required
           />
 
@@ -36,8 +37,8 @@ const RegisterContainer = (props) => {
             <b>password</b>
           </label>
           <input
-            value={userPassWord}
-            onChange={(e) => setUserPassWord(e.target.value)}
+            value={userPassword}
+            onChange={(e) => setUserPassword(e.target.value)}
             type="text"
             placeholder="enter thy password"
             name="password"
@@ -57,19 +58,20 @@ const RegisterContainer = (props) => {
           />
 
           <p>
-            Thou Actions Imply Thou Aceeptance Of Ourth Terms And Services{" "}
+            Thou Actions Imply Thou Acceptance Of Ourth Terms And Services{" "}
             <a href="#">Terms & Privacy</a>.
           </p>
           <button onClick={handleSubmit} class="registerbtn">
             Register
           </button>
-        </div>
-        <div class="container signin">
-          <p>
-            Already have an account? <a href="#">Sign in</a>.
-          </p>
+          <div className="container-signin">
+            <p>
+              Already have an account? <Link to={"/login"}>signin</Link>.
+            </p>
+          </div>
         </div>
       </form>
+      spoko 6te se opravq posle css-a
     </div>
   );
 };
