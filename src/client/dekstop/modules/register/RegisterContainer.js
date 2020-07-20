@@ -7,11 +7,20 @@ import UserProfile from "../../layout/header/components/components/UserProfile/U
 const RegisterContainer = (props) => {
   const [username, setUsername] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const body = { username: username, password: userPassword, isAdmin: false };
-    axios.post("http://localhost:5000/user/register", body);
+    const body = {
+      username: username,
+      email: userEmail,
+      password: userPassword,
+      isAdmin: false,
+    };
+    axios
+      .post("http://localhost:5000/user/register", body)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err.response));
   };
 
   return (
@@ -29,6 +38,18 @@ const RegisterContainer = (props) => {
               type="text"
               placeholder="enter thy username"
               name="username"
+              required
+            />
+          </div>
+          <div className={styles.inputHolder}>
+            <label>Email</label>
+            <input
+              className={styles.input}
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
+              type="email"
+              placeholder="enter thy email"
+              name="email"
               required
             />
           </div>

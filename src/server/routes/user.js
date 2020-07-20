@@ -14,6 +14,8 @@ router.route("/register").post((req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
+  console.log("tova e maila:", email);
+
   let isAdmin = false;
 
   if (req.body.isAdmin) {
@@ -21,7 +23,7 @@ router.route("/register").post((req, res) => {
   }
   let error = { msg: "", status: "" };
 
-  if (email === undefined) {
+  if (email === undefined || email === "") {
     error.msg = "No email provided";
     error.status = "400";
     res.status(400).json(error);
