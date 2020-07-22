@@ -5,11 +5,11 @@ import SideBarContainer from "./sidebar/SideBarContainer";
 
 const Layout = (props) => {
   return (
-    <div>
+    <React.Fragment>
       <HeaderContainer />
       <SideBarContainer />
       {props.children}
-    </div>
+    </React.Fragment>
   );
 };
 

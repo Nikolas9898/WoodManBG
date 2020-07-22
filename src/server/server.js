@@ -15,8 +15,11 @@ const usersRouter = require("./routes/user");
 app.use("/user", usersRouter);
 const authRouter = require("./routes/authentication");
 app.use("/auth", authRouter);
-const categoryRouter=require("./routes/category");
-app.use("/category",categoryRouter)
+const categoryRouter = require("./routes/category");
+app.use("/category", categoryRouter);
+const productRouter = require("./routes/product");
+app.use("/product", productRouter);
+
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
