@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../layout/layout";
 import HomeStyle from "./Home.module.css";
+import ProductsContainer from "../../modules/products/ProductsContainer";
 
 const HomePage = (props) => {
   return (
@@ -8,8 +9,7 @@ const HomePage = (props) => {
       {" "}
       <Layout>
         <div className={HomeStyle.Container}>
-          dsfsdf dsfsdfdsfsdfdsfsdf dsfsdf dsfsdf dsfsdf dsfsdf dsfsdf dsfsdf
-          dsfsdf dsfsdf dsfsdf dsfsdf dsfsdf
+          <ProductsContainer />
         </div>
       </Layout>
     </div>
