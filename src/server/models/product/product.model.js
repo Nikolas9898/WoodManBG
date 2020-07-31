@@ -24,10 +24,15 @@ const productSchema = new Schema(
       trim: true,
       minlength: 3,
     },
-    imagePath: {
+    mainImagePath: {
       type: String,
       required: true,
     },
+    galleryImagesPaths: [
+      {
+        imagePath: String,
+      },
+    ],
     createdBy: {
       type: String,
       required: true,
