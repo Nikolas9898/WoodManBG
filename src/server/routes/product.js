@@ -2,6 +2,8 @@ const router = require("express").Router();
 let Product = require("../models/product/product.model");
 let adminAuth = require("../middlewates/adminAuthentication");
 const slugify = require("slugify");
+
+
 router.route("/").get((req, res) => {
   Product.find()
     .then((products) => res.json(products))
@@ -13,37 +15,34 @@ router.route("/create").post((req, res) => {
   const description = req.body.description;
   const slug = slugify(req.body.slug);
   const createdBy = req.body.createdBy;
-  const imagePath = req.body.imagePath;
-
-  console.log(req.body);
-
-  Product.find().then((products) => {
-    products.map((product) => {
-      console.log("drbr");
-    });
-  });
+  const mainImagePath = req.body.mainImagePath;
+  const galleryImagesPaths = req.body.galleryImagesPaths;
 
   const newProduct = new Product({
     title,
     description,
     slug,
     createdBy,
-    imagePath,
+    mainImagePath,
+    galleryImagesPaths,
   });
 
-  newProduct
-    .save()
-    .then(() => res.json(newProduct))
-    .catch((err) => {
-      console.log(err);
-      // if (err.code === 11000) {
-      //   error.msg = "User already exists";
-      //   error.status = "400";
-      //   res.status(400).json(error);
-      // } else {
-      //   res.status(400).json("Error: ", err);
-      // }
-    });
+  Product.findOne({
+    title: title,
+    description: description,
+    slug: slug,
+  }).then((product) => {
+    if (product) {
+      res.status(400).json("Veche sushtestvuva");
+    } else {
+      newProduct
+        .save()
+        .then(() => res.json(newProduct))
+        .catch((err) => {
+          res.status(400).json({ err });
+        });
+    }
+  });
 });
 
 router.route("/delete/:id").delete((req, res) => {
