@@ -1,56 +1,45 @@
-.card_holder{
-    width:300px;
-    height: 400px;
-    background: white;
-    margin-bottom: 50px;
-    margin-right: 20px;
-    cursor: pointer;
+.card_holder {
+  width: 290px;
+  height: 320px;
+  border: solid 3px white;
+  color: white;
+  margin-top: 80px;
+  margin-right: 20px;
+  cursor: pointer;
+  background: chocolate;
+  transition-duration: 500ms;
+  overflow: hidden;
+
 }
 .card_holder:hover{
-    width:300px;
-    height: 400px;
-    margin-bottom: 50px;
-    margin-right: 20px;
-    background: gainsboro;
-    cursor: pointer;
+  margin-top: 20px;
+  width: 290px;
+  height: 380px;
+  margin-right: 20px;
+  background: gainsboro;
+  cursor: pointer;
+  color: black;
+  }
+
+.card_image {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
 }
-.card_image{
-    height: 300px;
-    width: 100%;
-    object-fit: none;
-    cursor: pointer;
+.card_title {
+  text-align: left;
+  height: 40px;
+  overflow: hidden;
+  padding-left: 10px;
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
-.card_image:hover{
-    object-fit: cover;
-    height: 300px;
-    width: 100%;
-}
-.card_title{
-    text-align: left;
-    height: 40px;
-    overflow: hidden;
-    margin-left: 10px;
-    font-size: 20px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-}
-.button_info{
-    padding: 30px ;
-    color: tomato;
-    cursor: pointer;
-    font-size: 25px;
-    font-weight: bolder;
-    text-decoration: none;
-}
-.button_info:hover{
-    color: tomato;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: bolder;
-    text-decoration: underline;
-}
-.date{
-text-align: left;
-    margin-left: 10px;
+
+.date {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 18px;
 }

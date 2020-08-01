@@ -1,8 +1,10 @@
 .ProductContainerHolder {
-  width: 1300px;
+  width: 1270px;
   margin: auto;
   text-align: center;
   font-family: arial;
   display: flex;
   flex-wrap: wrap;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }

@@ -1,6 +1,6 @@
 .SideBarContainerHolder {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 120px; /* Set the width of the sidebar */
+  width: 200px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -9,13 +9,25 @@
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   margin-top: 42px;
-  text-align: center;
-  font-size: 20px;
-  color: white;
 }
 
 .CategoryHolder {
   word-wrap: break-word;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+.CategoryHolder:hover {
+  word-wrap: break-word;
+  margin-top: 5px;
+  margin-bottom: 13px;
+  font-size: 30px;
+  color: coral;
+  cursor: pointer;
+}
+.category_container{
+  margin-left: 20px;
+  width: 160px;
 }

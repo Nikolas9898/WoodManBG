@@ -7,12 +7,10 @@ import moment from "moment";
 const ProductCard = ({ product }) => {
   return (
     <div className={ProductCardStyle.card_holder}>
-
       <img
         src={product.mainImagePath}
         className={ProductCardStyle.card_image}
       />
-
       <h1 className={ProductCardStyle.card_title}>{product.title}</h1>
       <div className={ProductCardStyle.date}>
         Добавен на: {moment(product.updateAt).format("DD/MM/YYYY")}
