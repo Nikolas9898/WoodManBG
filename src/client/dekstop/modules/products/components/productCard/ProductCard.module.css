@@ -1,7 +1,7 @@
 .card_holder {
   width: 290px;
   height: 320px;
-  border: solid 3px white;
+  border: solid 3px chocolate;
   color: white;
   margin-top: 80px;
   margin-right: 20px;
@@ -9,17 +9,17 @@
   background: chocolate;
   transition-duration: 500ms;
   overflow: hidden;
-
 }
-.card_holder:hover{
+.card_holder:hover {
   margin-top: 20px;
   width: 290px;
   height: 380px;
   margin-right: 20px;
+  border: solid 3px gainsboro;
   background: gainsboro;
   cursor: pointer;
   color: black;
-  }
+}
 
 .card_image {
   object-fit: cover;
@@ -38,8 +38,13 @@
 }
 
 .date {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: left;
   padding-left: 10px;
   font-size: 18px;
+}
+.category{
+  padding-left: 10px;
+  font-size: 20px;
+  text-align: left;
 }
