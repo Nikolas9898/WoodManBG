@@ -3,7 +3,6 @@ let Product = require("../models/product/product.model");
 let adminAuth = require("../middlewates/adminAuthentication");
 const slugify = require("slugify");
 
-
 router.route("/").get((req, res) => {
   Product.find()
     .then((products) => res.json(products))
@@ -14,6 +13,7 @@ router.route("/create").post((req, res) => {
   const title = req.body.title;
   const description = req.body.description;
   const slug = slugify(req.body.slug);
+  const category = req.body.category;
   const createdBy = req.body.createdBy;
   const mainImagePath = req.body.mainImagePath;
   const galleryImagesPaths = req.body.galleryImagesPaths;
@@ -22,6 +22,7 @@ router.route("/create").post((req, res) => {
     title,
     description,
     slug,
+    category,
     createdBy,
     mainImagePath,
     galleryImagesPaths,

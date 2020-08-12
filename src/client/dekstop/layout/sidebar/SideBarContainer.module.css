@@ -27,7 +27,11 @@
   color: coral;
   cursor: pointer;
 }
-.category_container{
+.category_container {
   margin-left: 20px;
   width: 160px;
+}
+.linkHolder {
+  text-decoration: none;
+  color: white;
 }

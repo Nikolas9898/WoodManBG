@@ -1,0 +1,9 @@
+.CategoryPageHolder {
+  background-color: #343434;
+}
+.Container {
+  background-image: url("https://i.pinimg.com/originals/1e/ac/38/1eac389824b82539c01754d73f79dc59.jpg");
+  min-height: 100vh;
+  margin-left: 200px;
+  background-size: cover;
+}

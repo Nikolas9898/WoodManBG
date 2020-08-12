@@ -18,6 +18,12 @@ const productSchema = new Schema(
       trim: true,
       minlength: 3,
     },
+    category: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 3,
+    },
     description: {
       type: String,
       required: true,

@@ -5,6 +5,7 @@ import AboutPage from "./pages/about/AboutPage";
 import NotFound from "./pages/notFound/NotFound";
 import RegisterPage from "./pages/register/RegisterPage";
 import LoginPage from "./pages/login/LoginPage";
+import CategoryPage from "./pages/category/CategoryPage";
 
 class Routes extends Component {
   render() {
@@ -12,6 +13,7 @@ class Routes extends Component {
       <Router>
         <Switch>
           <Route path="/" exact component={HomePage} />
+          <Route path="/:slug" exact component={CategoryPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/login" component={LoginPage} />
