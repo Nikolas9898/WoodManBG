@@ -9,6 +9,7 @@ const ProductCard = ({ product }) => {
     <div className={ProductCardStyle.card_holder}>
       <img
         src={product.mainImagePath}
+        alt={"ProductImage"}
         className={ProductCardStyle.card_image}
       />
       <h1 className={ProductCardStyle.card_title}>{product.title}</h1>

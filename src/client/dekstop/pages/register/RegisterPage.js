@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import RegisterContainer from "../../modules/register/RegisterContainer";
 import LayoutWOL from "../../layout/layoutWOL";
 
@@ -13,6 +12,5 @@ const RegisterPage = (props) => {
   );
 };
 
-RegisterPage.propTypes = {};
 
 export default RegisterPage;

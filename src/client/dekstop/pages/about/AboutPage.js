@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderContainer from "../../layout/header/HeaderContainer";
 import Layout from "../../layout/layout";
 
 const AboutPage = (props) => {

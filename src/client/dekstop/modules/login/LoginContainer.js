@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../login/LoginContainer.module.css";
 import axios from "axios";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const LoginContainer = (props) => {
   const [username, setUsername] = useState("");
@@ -61,19 +61,17 @@ const LoginContainer = (props) => {
 
         <div className="container">
           <span className="psw">
-            Forgot <a href="#">password?</a>
+            Forgot <Link to={"#"}>password?</Link>
           </span>
         </div>
         <div className="container-signup">
           <p>
-            "You don't have an account? <a href="/register">Sign up</a>.
+            "You don't have an account? <Link to={"/register"}>Sign up</Link>.
           </p>
         </div>
       </form>
     </div>
   );
 };
-
-LoginContainer.propTypes = {};
 
 export default LoginContainer;

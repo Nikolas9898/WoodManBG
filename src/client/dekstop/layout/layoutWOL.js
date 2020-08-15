@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import HeaderContainer from "./header/HeaderContainer";
 
 const Layout = (props) => {
@@ -11,6 +10,5 @@ const Layout = (props) => {
   );
 };
 
-Layout.propTypes = {};
 
 export default Layout;

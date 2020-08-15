@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import HeaderContainer from "./header/HeaderContainer";
 import SideBarContainer from "./sidebar/SideBarContainer";
 
@@ -12,7 +11,5 @@ const Layout = (props) => {
     </React.Fragment>
   );
 };
-
-Layout.propTypes = {};
 
 export default Layout;

@@ -56,5 +56,18 @@ router.route("/:slug").get((req, res) => {
     .then((product) => res.json(product))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+router.route("/category/:category_slug").get((req, res) => {
+  const category = req.params.category_slug;
+
+  Product.find({ category })
+    .then((products) => {
+      res.json(products);
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+
+  // Product.findOne({ slug: req.params.slug })
+  //     .then((product) => res.json(product))
+  //     .catch((err) => res.status(400).json("Error: " + err));
+});
 
 module.exports = router;

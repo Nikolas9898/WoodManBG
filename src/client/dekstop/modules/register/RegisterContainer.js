@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./RegisterContainer.module.css";
-import UserProfile from "../../layout/header/components/components/UserProfile/UserProfile";
 
 const RegisterContainer = (props) => {
   const [username, setUsername] = useState("");
