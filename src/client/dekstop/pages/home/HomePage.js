@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../layout/layout";
 import HomeStyle from "./Home.module.css";
-import ProductsContainer from "../../modules/products/ProductsContainer";
+import ProductsContainer from "../../modules/products/productsList/ProductsContainer";
 
 const HomePage = (props) => {
   return (

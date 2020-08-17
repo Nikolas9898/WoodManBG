@@ -1,0 +1,1 @@
+export const GET_PRODUCT_BY_SLUG_URL="http://localhost:5000/product/"
