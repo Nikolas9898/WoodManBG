@@ -8,6 +8,8 @@ const ProductPreviewContainer = (props) => {
 
   useEffect(() => {
     getProductBySlug(props.productSlug).then((product) => {
+
+
       setProduct(product.product);
     });
   }, [props.productSlug]);
@@ -21,23 +23,25 @@ const ProductPreviewContainer = (props) => {
 
   return (
     <div className="app">
-      <div className="details" key={1}>
-        <div className="big-img">
-          <img src={product.mainImagePath} alt="" />
-        </div>
-
-        <div className="box">
-          <div className="row">
-            <h2>{product.title}</h2>
+      <div>
+        <div className="details" key={1}>
+          <div className="big-img">
+            <img src={product.mainImagePath} alt="" />
           </div>
-          {/*<Colors colors={item.colors} />*/}
 
-          <p>{product.description}</p>
+          <div className="box">
+            <div className="row">
+              <h2>{product.title}</h2>
+            </div>
+            {/*<Colors colors={item.colors} />*/}
 
-          <DetailsThumb
-            images={product.galleryImagesPaths}
-            handleChangeImage={handleChangeMainImage}
-          />
+            <p>{product.description}</p>
+
+            <DetailsThumb
+              images={product.galleryImagesPaths}
+              handleChangeImage={handleChangeMainImage}
+            />
+          </div>
         </div>
       </div>
     </div>

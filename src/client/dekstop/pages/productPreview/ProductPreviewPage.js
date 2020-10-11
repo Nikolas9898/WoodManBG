@@ -7,7 +7,7 @@ const ProductPreviewPage = (props) => {
   const productSlug = props.match.params.slug;
 
   return (
-    <div className={HomeStyle.PageHolder}>
+    <div>
       {" "}
       <Layout>
         <div className={HomeStyle.Container}>
